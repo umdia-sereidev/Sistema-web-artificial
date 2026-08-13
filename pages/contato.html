@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — CasaVerde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .contato-hero {
+      background: var(--grad-hero);
+      padding: 140px 0 80px;
+      text-align: center;
+      color: white;
+    }
+    .contato-hero h1 { color: white; margin-bottom: 12px; }
+    .contato-hero p { color: rgba(255,255,255,0.75); font-size: 1.05rem; }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 60px 0;
+    }
+
+    .contato-info { display: flex; flex-direction: column; gap: 24px; }
+
+    .info-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s;
+    }
+
+    .info-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+    .info-card .icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: var(--grad-btn);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .info-card h4 { font-size: 1rem; margin-bottom: 4px; }
+    .info-card p  { font-size: 0.88rem; color: var(--marrom-claro); }
+
+    .contato-form-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contato-form-card h2 { margin-bottom: 6px; }
+    .contato-form-card .sub { color: var(--marrom-claro); margin-bottom: 28px; font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      .contato-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" style="position:relative;background:white;box-shadow:var(--shadow-sm)">
+  <div class="container">
+    <a href="../index.html" class="logo" style="color:var(--marrom-escuro)">
+      <span class="logo-icon">🌿</span> CasaVerde
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="../index.html#categorias">Categorias</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="../index.html" class="btn btn-primary btn-sm">
+        <i class="fa-solid fa-arrow-left"></i> Voltar à loja
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="contato-hero">
+  <div class="container">
+    <span class="hero-eyebrow"><i class="fa-solid fa-envelope"></i> Fale conosco</span>
+    <h1>Como podemos ajudar?</h1>
+    <p>Nossa equipe responde em até 24 horas úteis.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="contato-grid">
+
+    <div class="contato-info">
+      <div class="info-card">
+        <div class="icon"><i class="fa-solid fa-phone"></i></div>
+        <div>
+          <h4>Telefone</h4>
+          <p>(35) 99999-0000<br/>Seg–Sex, 8h–18h</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+        <div>
+          <h4>E-mail</h4>
+          <p>contato@casaverde.com.br<br/>Resposta em até 24h</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div>
+          <h4>WhatsApp</h4>
+          <p>(35) 99999-0001<br/>Atendimento rápido</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div>
+          <h4>Endereço</h4>
+          <p>Santa Rita do Sapucaí — MG<br/>Brasil</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contato-form-card">
+      <h2>Envie sua mensagem</h2>
+      <p class="sub">Tire dúvidas, faça pedidos ou envie sugestões.</p>
+
+      <div class="form-msg" id="contatoMsg"></div>
+
+      <div class="form-group">
+        <label>Seu nome</label>
+        <input class="form-input" type="text" id="cNome" placeholder="Rafael Gustavo" />
+      </div>
+      <div class="form-group">
+        <label>E-mail</label>
+        <input class="form-input" type="email" id="cEmail" placeholder="seu@email.com" />
+      </div>
+      <div class="form-group">
+        <label>Assunto</label>
+        <input class="form-input" type="text" id="cAssunto" placeholder="Dúvida sobre produto..." />
+      </div>
+      <div class="form-group">
+        <label>Mensagem</label>
+        <textarea class="form-input" id="cMsg" rows="5" placeholder="Escreva sua mensagem..." style="resize:vertical"></textarea>
+      </div>
+      <button class="btn btn-primary btn-full" id="btnEnviarContato">
+        <i class="fa-solid fa-paper-plane"></i> Enviar mensagem
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border:none;padding:0">
+      <span>© 2025 CasaVerde. Todos os direitos reservados.</span>
+      <a href="../index.html" style="color:var(--menta)">← Voltar à loja</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script>
+  function toast(msg, tipo = 'ok', icone = null) {
+    const wrap = document.getElementById('toastWrap');
+    const icons = { ok: '✅', erro: '❌', info: 'ℹ️' };
+    const el = document.createElement('div');
+    el.className = `toast${tipo === 'erro' ? ' erro' : ''}`;
+    el.innerHTML = `<span class="icon">${icone || icons[tipo]}</span><span class="msg">${msg}</span>`;
+    wrap.appendChild(el);
+    setTimeout(() => { el.classList.add('saindo'); el.addEventListener('animationend', () => el.remove()); }, 3200);
+  }
+
+  document.getElementById('btnEnviarContato').addEventListener('click', () => {
+    const nome    = document.getElementById('cNome').value.trim();
+    const email   = document.getElementById('cEmail').value.trim();
+    const assunto = document.getElementById('cAssunto').value.trim();
+    const msg     = document.getElementById('cMsg').value.trim();
+    const msgEl   = document.getElementById('contatoMsg');
+
+    if (!nome || !email || !assunto || !msg) {
+      msgEl.textContent = 'Por favor, preencha todos os campos.';
+      msgEl.className = 'form-msg erro';
+      return;
+    }
+
+    msgEl.className = 'form-msg';
+    setTimeout(() => {
+      msgEl.textContent = '✅ Mensagem enviada com sucesso! Retornaremos em breve.';
+      msgEl.className = 'form-msg sucesso';
+      document.getElementById('cNome').value = '';
+      document.getElementById('cEmail').value = '';
+      document.getElementById('cAssunto').value = '';
+      document.getElementById('cMsg').value = '';
+      toast('Mensagem enviada! 💚', 'ok');
+    }, 600);
+  });
+</script>
+</body>
+</html>

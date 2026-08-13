@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajuda — CasaVerde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .ajuda-hero {
+      background: var(--grad-hero);
+      padding: 120px 0 60px;
+      text-align: center;
+      color: white;
+    }
+    .ajuda-hero h1 { color: white; margin-bottom: 12px; }
+    .ajuda-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin: 60px 0;
+    }
+    .ajuda-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s;
+    }
+    .ajuda-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .ajuda-card .icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .ajuda-card h3 { margin-bottom: 10px; }
+    .ajuda-card p { color: var(--marrom-claro); font-size: 0.9rem; line-height: 1.6; }
+    .faq-item {
+      background: white;
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-pergunta {
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .faq-pergunta:hover { background: var(--off-white); }
+    .faq-pergunta .arrow { transition: transform 0.3s; }
+    .faq-item.aberto .faq-pergunta .arrow { transform: rotate(180deg); }
+    .faq-resposta {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--ease-out), padding 0.3s;
+      padding: 0 24px;
+      color: var(--marrom-claro);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .faq-item.aberto .faq-resposta { max-height: 200px; padding: 0 24px 18px; }
+
+    @media (max-width: 768px) {
+      .ajuda-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" style="position:relative;background:white;box-shadow:var(--shadow-sm)">
+  <div class="container">
+    <a href="../index.html" class="logo" style="color:var(--marrom-escuro)">
+      <span class="logo-icon">🌿</span> CasaVerde
+    </a>
+    <div class="nav-actions">
+      <a href="../index.html" class="btn btn-primary btn-sm">
+        <i class="fa-solid fa-arrow-left"></i> Voltar à loja
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="ajuda-hero">
+  <div class="container">
+    <span class="hero-eyebrow"><i class="fa-solid fa-circle-question"></i> Central de Ajuda</span>
+    <h1>Como podemos te ajudar?</h1>
+    <p style="color:rgba(255,255,255,0.75)">Encontre respostas rápidas para as dúvidas mais comuns.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ajuda-grid">
+    <div class="ajuda-card">
+      <div class="icon">🚚</div>
+      <h3>Entrega e Frete</h3>
+      <p>Saiba os prazos de entrega por região, como rastrear seu pedido e nossas políticas de frete grátis.</p>
+      <a href="contato.html" class="btn btn-primary btn-sm" style="margin-top:16px">Saber mais</a>
+    </div>
+    <div class="ajuda-card">
+      <div class="icon">🔄</div>
+      <h3>Trocas e Devoluções</h3>
+      <p>Prazo de 30 dias para troca ou devolução. Produto com defeito? Tratamos com prioridade.</p>
+      <a href="contato.html" class="btn btn-primary btn-sm" style="margin-top:16px">Iniciar troca</a>
+    </div>
+    <div class="ajuda-card">
+      <div class="icon">💳</div>
+      <h3>Pagamento</h3>
+      <p>Aceitamos cartão, PIX e boleto. Parcelamento em até 12x sem juros no cartão de crédito.</p>
+      <a href="contato.html" class="btn btn-primary btn-sm" style="margin-top:16px">Dúvidas</a>
+    </div>
+  </div>
+
+  <div style="max-width:720px;margin:0 auto 80px">
+    <h2 style="margin-bottom:32px;text-align:center">Perguntas Frequentes</h2>
+
+    <div class="faq-item">
+      <div class="faq-pergunta">
+        Qual o prazo de entrega para Minas Gerais?
+        <i class="fa-solid fa-chevron-down arrow"></i>
+      </div>
+      <div class="faq-resposta">
+        Para Santa Rita do Sapucaí e cidades vizinhas, o prazo é de 3 a 5 dias úteis após confirmação do pagamento. Para outras regiões de MG, pode variar entre 5 e 10 dias úteis.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-pergunta">
+        Os produtos são entregues montados?
+        <i class="fa-solid fa-chevron-down arrow"></i>
+      </div>
+      <div class="faq-resposta">
+        A maioria dos móveis é entregue desmontada com instruções detalhadas. Para regiões próximas, oferecemos o serviço de montagem profissional por um valor adicional — consulte nossa equipe.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-pergunta">
+        Posso parcelar no cartão?
+        <i class="fa-solid fa-chevron-down arrow"></i>
+      </div>
+      <div class="faq-resposta">
+        Sim! Parcelamos em até 12x sem juros no cartão de crédito para compras acima de R$ 500. Também aceitamos PIX com 5% de desconto e boleto bancário.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-pergunta">
+        Como faço para rastrear meu pedido?
+        <i class="fa-solid fa-chevron-down arrow"></i>
+      </div>
+      <div class="faq-resposta">
+        Após o envio, você receberá um e-mail com o código de rastreamento. Acesse "Meus Pedidos" na sua conta ou entre em contato pelo WhatsApp.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-pergunta">
+        Os produtos têm garantia?
+        <i class="fa-solid fa-chevron-down arrow"></i>
+      </div>
+      <div class="faq-resposta">
+        Todos os produtos CasaVerde têm garantia mínima de 12 meses contra defeitos de fabricação. Peças artesanais em madeira maciça têm garantia estendida de 24 meses.
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border:none;padding:0">
+      <span>© 2025 CasaVerde. Todos os direitos reservados.</span>
+      <a href="../index.html" style="color:var(--menta)">← Voltar à loja</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-pergunta').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const aberto = item.classList.contains('aberto');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('aberto'));
+      if (!aberto) item.classList.add('aberto');
+    });
+  });
+</script>
+</body>
+</html>
