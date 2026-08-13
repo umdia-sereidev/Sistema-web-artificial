@@ -1,3 +1,6 @@
+ATENÇÂO ESTE NÂO É UM PROJETO AUTORAL, É SOMENTE UM TESTE PARA UMA ATIVIDADE ACADEMICA
+
+
 # 🌿 CasaVerde — Loja de Móveis & Decoração
 
 Projeto front-end completo com HTML, CSS e JavaScript puro.
