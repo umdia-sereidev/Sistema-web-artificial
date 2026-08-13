@@ -1,0 +1,14 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Admin",
+      "email": "admin@casaverde.com",
+      "senha": "admin123",
+      "role": "admin",
+      "carrinho": [],
+      "favoritos": [],
+      "dataCadastro": "2024-01-01"
+    }
+  ]
+}
