@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CasaVerde — Móveis & Decoração</title>
+  <meta name="description" content="Móveis artesanais com alma. Encontre peças únicas para transformar sua casa." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome (ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!--logo cabeçalho-->
+  
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     OVERLAY (fundo escuro ao abrir painéis)
+════════════════════════════════════════════════════════════════ -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🌿</span>
+      CasaVerde
+    </a>
+
+    <!-- Links centrais -->
+    <ul class="nav-links">
+      <li><a href="#banners">Coleções</a></li>
+      <li><a href="#categorias">Categorias</a></li>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="pages/contato.html">Contato</a></li>
+    </ul>
+
+    <!-- Ações da direita -->
+    <div class="nav-actions">
+
+      <!-- Busca -->
+      <button class="nav-icon-btn" title="Buscar" id="btnBusca">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <!-- Favoritos -->
+      <button class="nav-icon-btn" title="Favoritos" id="btnFavoritos">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+
+      <!-- Login/Usuário -->
+      <button class="nav-icon-btn" title="Minha conta" id="btnLogin">
+        <i class="fa-regular fa-user"></i>
+      </button>
+
+      <!-- Carrinho -->
+      <button class="nav-icon-btn" title="Carrinho" id="btnCarrinho">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="badge" id="badgeCarrinho">0</span>
+      </button>
+
+      <!-- Menu hambúrguer -->
+      <button class="menu-toggle-btn" id="btnMenu" title="Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAINEL LATERAL — MENU EXPANDIDO
+════════════════════════════════════════════════════════════════ -->
+<aside class="side-panel" id="sidePanel">
+
+  <div class="side-panel-header">
+    <h3>Menu</h3>
+    <button class="btn-fechar-painel" id="btnFecharPainel">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <!-- Info do usuário -->
+  <div class="side-panel-user" id="panelUser">
+    <div class="user-avatar" id="panelAvatar">?</div>
+    <div class="user-info">
+      <div class="name" id="panelNome">Visitante</div>
+      <div class="email" id="panelEmail">Faça login para continuar</div>
+    </div>
+  </div>
+
+  <nav class="side-panel-nav">
+
+    <div class="side-panel-section-title">Minha Conta</div>
+
+    <a class="side-panel-item" href="#" id="panelLoginBtn">
+      <span class="icon"><i class="fa-regular fa-user"></i></span>
+      <span>Entrar / Cadastrar</span>
+    </a>
+
+    <a class="side-panel-item" href="#" id="panelCarrinhoBtn">
+      <span class="icon"><i class="fa-solid fa-bag-shopping"></i></span>
+      <span>Meu Carrinho</span>
+      <span class="item-count" id="panelBadgeCarrinho">0</span>
+    </a>
+
+    <a class="side-panel-item" href="#">
+      <span class="icon"><i class="fa-regular fa-heart"></i></span>
+      <span>Favoritos</span>
+    </a>
+
+    <a class="side-panel-item" href="#">
+      <span class="icon"><i class="fa-solid fa-box-open"></i></span>
+      <span>Meus Pedidos</span>
+    </a>
+
+    <div class="side-panel-divider"></div>
+    <div class="side-panel-section-title">Navegação</div>
+
+    <a class="side-panel-item" href="#categorias">
+      <span class="icon"><i class="fa-solid fa-table-cells-large"></i></span>
+      <span>Categorias</span>
+    </a>
+
+    <a class="side-panel-item" href="#produtos">
+      <span class="icon"><i class="fa-solid fa-star"></i></span>
+      <span>Destaques</span>
+    </a>
+
+    <a class="side-panel-item" href="#banners">
+      <span class="icon"><i class="fa-solid fa-tag"></i></span>
+      <span>Promoções</span>
+    </a>
+
+    <div class="side-panel-divider"></div>
+    <div class="side-panel-section-title">Suporte</div>
+
+    <a class="side-panel-item" href="pages/contato.html">
+      <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+      <span>Contato</span>
+    </a>
+
+    <a class="side-panel-item" href="pages/ajuda.html">
+      <span class="icon"><i class="fa-solid fa-circle-question"></i></span>
+      <span>Central de Ajuda</span>
+    </a>
+
+    <a class="side-panel-item" href="#">
+      <span class="icon"><i class="fa-solid fa-truck"></i></span>
+      <span>Rastrear Pedido</span>
+    </a>
+
+  </nav>
+
+  <div class="side-panel-footer">
+    <button class="btn btn-primary btn-full btn-sm" id="panelBtnAcao">
+      <i class="fa-solid fa-right-to-bracket"></i> Fazer Login
+    </button>
+    <button class="btn btn-dark btn-full btn-sm" id="panelBtnLogout" style="display:none">
+      <i class="fa-solid fa-right-from-bracket"></i> Sair da conta
+    </button>
+  </div>
+
+</aside>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAINEL DO CARRINHO
+════════════════════════════════════════════════════════════════ -->
+<aside class="carrinho-panel" id="carrinhoPanel">
+
+  <div class="carrinho-header">
+    <h3><i class="fa-solid fa-bag-shopping"></i> Meu Carrinho</h3>
+    <button class="btn-fechar-painel" id="btnFecharCarrinho">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <div class="carrinho-itens" id="carrinhoItens">
+    <!-- preenchido via JS -->
+  </div>
+
+  <div class="carrinho-footer">
+    <div class="carrinho-total">
+      <span class="label">Total</span>
+      <span class="valor" id="carrinhoTotal">R$ 0,00</span>
+    </div>
+    <button class="btn btn-primary btn-full">
+      <i class="fa-solid fa-lock"></i> Finalizar Compra
+    </button>
+    <button class="btn btn-light btn-full btn-sm" style="margin-top:8px" id="btnLimparCarrinho">
+      Limpar carrinho
+    </button>
+  </div>
+
+</aside>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     MODAL DE LOGIN / CADASTRO
+════════════════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalAuth">
+  <div class="modal">
+
+    <!-- TELA DE LOGIN -->
+    <div id="telaLogin">
+      <div class="modal-header">
+        <button class="btn-fechar-painel" id="btnFecharModal" style="position:absolute;top:16px;right:16px">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Bem-vindo de volta 🌿</h2>
+        <p>Entre na sua conta CasaVerde</p>
+      </div>
+      <div class="modal-body">
+        <div class="form-msg" id="loginMsg"></div>
+        <div class="form-group">
+          <label for="loginEmail">E-mail</label>
+          <input class="form-input" type="email" id="loginEmail" placeholder="seu@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="loginSenha">Senha</label>
+          <input class="form-input" type="password" id="loginSenha" placeholder="••••••••" />
+        </div>
+        <button class="btn btn-primary btn-full" id="btnFazerLogin">
+          <i class="fa-solid fa-right-to-bracket"></i> Entrar
+        </button>
+        <div class="modal-switch">
+          Não tem conta? <a id="irCadastro">Cadastre-se grátis</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TELA DE CADASTRO -->
+    <div id="telaCadastro" style="display:none">
+      <div class="modal-header">
+        <button class="btn-fechar-painel" id="btnFecharModalCad" style="position:absolute;top:16px;right:16px">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2>Criar conta 🌱</h2>
+        <p>Junte-se à CasaVerde hoje</p>
+      </div>
+      <div class="modal-body">
+        <div class="form-msg" id="cadastroMsg"></div>
+        <div class="form-group">
+          <label for="cadNome">Seu nome</label>
+          <input class="form-input" type="text" id="cadNome" placeholder="Rafael Gustavo" />
+        </div>
+        <div class="form-group">
+          <label for="cadEmail">E-mail</label>
+          <input class="form-input" type="email" id="cadEmail" placeholder="seu@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="cadSenha">Senha</label>
+          <input class="form-input" type="password" id="cadSenha" placeholder="Mínimo 6 caracteres" />
+        </div>
+        <button class="btn btn-primary btn-full" id="btnCadastrar">
+          <i class="fa-solid fa-user-plus"></i> Criar conta
+        </button>
+        <div class="modal-switch">
+          Já tem conta? <a id="irLogin">Fazer login</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-content" data-reveal>
+      <span class="hero-eyebrow">
+        <i class="fa-solid fa-leaf"></i> Nova Coleção 2025
+      </span>
+      <h1>
+        Móveis com <span>alma</span><br/>para sua casa
+      </h1>
+      <p class="hero-desc">
+        Peças artesanais que unem natureza, design e conforto.
+        Do campo à sua sala — com identidade.
+      </p>
+      <div class="hero-ctas">
+        <a href="#produtos" class="btn btn-primary">
+          <i class="fa-solid fa-bag-shopping"></i> Ver coleção
+        </a>
+        <a href="#categorias" class="btn btn-outline">
+          Explorar categorias <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats flutuantes -->
+  <div class="hero-stats">
+    <div class="stat-card">
+      <div class="num">300+</div>
+      <div class="label">Produtos únicos</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">4.9</div>
+      <div class="label">Avaliação média</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">12k</div>
+      <div class="label">Clientes felizes</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     CATEGORIAS
+════════════════════════════════════════════════════════════════ -->
+<section class="categorias-section section" id="categorias">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <span class="section-eyebrow">Navegue por tema</span>
+        <h2>Categorias em destaque</h2>
+      </div>
+      <a href="#" class="btn btn-light btn-sm">
+        Ver todas <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+    <!-- Preenchido via JS com dados de produtos.json -->
+    <div class="categorias-grid" id="categoriasGrid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BANNERS / SLIDER (6 janelas)
+════════════════════════════════════════════════════════════════ -->
+<section class="banners-section" id="banners">
+  <div class="container">
+    <div class="banners-header reveal">
+      <div>
+        <span class="section-eyebrow">Ambientes completos</span>
+        <h2>Monte cada espaço da sua casa</h2>
+      </div>
+    </div>
+
+    <div class="slider-wrapper">
+      <div class="slider-track" id="sliderTrack">
+
+        <div class="banner-slide" data-cat="sala">
+          <div class="banner-bg"></div>
+          <div class="banner-pattern"></div>
+          <span class="banner-emoji">🛋️</span>
+          <div class="banner-content">
+            <span class="banner-tag">30% off</span>
+            <h3>Sala de Estar</h3>
+            <p class="banner-discount">Sofás, poltronas e mesas</p>
+            <a href="#" class="banner-cta">Ver ambiente <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="banner-slide" data-cat="jardim">
+          <div class="banner-bg"></div>
+          <div class="banner-pattern"></div>
+          <span class="banner-emoji">🌿</span>
+          <div class="banner-content">
+            <span class="banner-tag">Novo</span>
+            <h3>Jardim & Varanda</h3>
+            <p class="banner-discount">Móveis para área externa</p>
+            <a href="#" class="banner-cta">Ver ambiente <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="banner-slide" data-cat="jantar">
+          <div class="banner-bg"></div>
+          <div class="banner-pattern"></div>
+          <span class="banner-emoji">🍽️</span>
+          <div class="banner-content">
+            <span class="banner-tag">25% off</span>
+            <h3>Sala de Jantar</h3>
+            <p class="banner-discount">Mesas, cadeiras e aparadores</p>
+            <a href="#" class="banner-cta">Ver ambiente <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="banner-slide" data-cat="quarto">
+          <div class="banner-bg"></div>
+          <div class="banner-pattern"></div>
+          <span class="banner-emoji">🛏️</span>
+          <div class="banner-content">
+            <span class="banner-tag">Hot</span>
+            <h3>Quarto</h3>
+            <p class="banner-discount">Camas, cômodas e criados</p>
+            <a href="#" class="banner-cta">Ver ambiente <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="banner-slide" data-cat="escritorio">
+          <div class="banner-bg"></div>
+          <div class="banner-pattern"></div>
+          <span class="banner-emoji">💻</span>
+          <div class="banner-content">
+            <span class="banner-tag">20% off</span>
+            <h3>Home Office</h3>
+            <p class="banner-discount">Mesas, cadeiras e estantes</p>
+            <a href="#" class="banner-cta">Ver ambiente <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="banner-slide" data-cat="banheiro">
+          <div class="banner-bg"></div>
+          <div class="banner-pattern"></div>
+          <span class="banner-emoji">🪴</span>
+          <div class="banner-content">
+            <span class="banner-tag">Lançamento</span>
+            <h3>Banheiro & Spa</h3>
+            <p class="banner-discount">Acessórios e organização</p>
+            <a href="#" class="banner-cta">Ver ambiente <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Controles do slider -->
+    <div class="slider-controls">
+      <button class="slider-btn" id="sliderPrev" title="Anterior">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="slider-dots" id="sliderDots"></div>
+      <button class="slider-btn" id="sliderNext" title="Próximo">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     HOT PRODUCTS
+════════════════════════════════════════════════════════════════ -->
+<section class="section" id="produtos">
+  <div class="container">
+
+    <div class="section-header reveal">
+      <div>
+        <span class="section-eyebrow">Selecionados para você</span>
+        <h2>Produtos em destaque</h2>
+      </div>
+      <div class="produto-tabs">
+        <button class="tab-btn ativo" data-tab="destaque">Destaques</button>
+        <button class="tab-btn" data-tab="hot">Mais vendidos</button>
+        <button class="tab-btn" data-tab="todos">Todos</button>
+      </div>
+    </div>
+
+    <div class="produto-grid" id="produtoGrid">
+      <!-- Preenchido via JS -->
+    </div>
+
+    <div style="text-align:center; margin-top:40px">
+      <a href="pages/loja.html" class="btn btn-dark">
+        Ver todos os produtos <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     BANNER INSTITUCIONAL
+════════════════════════════════════════════════════════════════ -->
+<section style="padding: 0 0 80px">
+  <div class="container">
+    <div style="
+      background: var(--grad-hero);
+      border-radius: var(--radius-xl);
+      padding: 60px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+    " class="reveal">
+      <div style="position:absolute;right:64px;top:50%;transform:translateY(-50%);font-size:8rem;opacity:0.08">🌿</div>
+      <div>
+        <span class="section-eyebrow" style="color:var(--menta)">Nossa promessa</span>
+        <h2 style="color:white;max-width:480px">
+          Cada peça conta uma história de artesãos brasileiros
+        </h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;z-index:1">
+        <a href="#" class="btn btn-primary">
+          <i class="fa-solid fa-leaf"></i> Nossa história
+        </a>
+        <a href="pages/contato.html" class="btn btn-outline btn-sm">
+          Fale conosco <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="logo" style="color:white;margin-bottom:16px">
+          <span class="logo-icon">🌿</span> CasaVerde
+        </div>
+        <p>Móveis e decoração com alma brasileira. Da natureza para o seu lar, com design atemporal.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Loja</h4>
+        <ul>
+          <li><a href="#">Novidades</a></li>
+          <li><a href="#">Promoções</a></li>
+          <li><a href="#">Mais vendidos</a></li>
+          <li><a href="#">Lançamentos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Suporte</h4>
+        <ul>
+          <li><a href="pages/ajuda.html">Central de Ajuda</a></li>
+          <li><a href="pages/contato.html">Contato</a></li>
+          <li><a href="#">Rastrear Pedido</a></li>
+          <li><a href="#">Trocas e Devoluções</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Trabalhe conosco</a></li>
+          <li><a href="#">Privacidade</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 CasaVerde. Todos os direitos reservados.</span>
+      <span style="color:var(--menta)">Feito com 🌿 no Brasil</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TOAST CONTAINER
+════════════════════════════════════════════════════════════════ -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════════════════════ -->
+<script src="assets/js/db.js"></script>
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
